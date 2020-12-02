@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/11/09 12:33:04 by root             ###   ########.fr       */
+/*   Updated: 2020/12/02 18:00:38 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,31 @@ int ft_printf(const char *str, ...)
 	i = 0;
 
 	va_start(args, str);
-	while (str[i])
+	while (*str)
 	{
-	if (str[i] == '%')
+		if (*str == '%')
 		{
-			i++;
+			//i++;
 			init_flags(&flags);
-			
-			if ( str[i] == 'c')
+			//printf("O que esta dentro flag->convertion .... %c .... \n", flags.conversion );
+			str++;
+			//printf("STR .... %s .... \n", str);
+			readflag(&flags, str);
+			//printf("222222222222 flag->convertion .... %c .... 22222\n", flags.conversion );
+			/*if ( str[i] == 'c')
 			{
 				c = va_arg(args, int);
 				count += ft_putchar_ret(c);
-			}
+			}*/
+
+            count += ft_isconversion(&flags, args);
+            str += flags.len;
+
+
 		}
 		else
-			count += ft_putchar_ret(str[i]);
-		i++;
+			count += ft_putchar_ret(*str);
+		str++;
 	}
 
 	va_end(args);
@@ -61,6 +70,7 @@ void init_flags(t_flags *flags)
 	flags->minus = 0;
 	flags->zero = 0;
 	flags->conversion =  '\0';
+	//Outra maneira de inicializar a struct(t_flags) flags {0};
 }
 
 int		readflag(t_flags *flags, const char *str)
@@ -70,8 +80,11 @@ int		readflag(t_flags *flags, const char *str)
 	i = 0;
 	while (str[i] == '-' || str[i] == '*' || str[i] == '.' || ft_isdigit(str[i]))
 	{
+		readingflag(flags, str[i]);
 		//
+		//printf("ENTROU 1   ");
 		if (ft_isdigit(str[i]))
+		{	//printf("ENTROU  2  ");
 			while (ft_isdigit(str[i]))
 			{
 				if(flags->prec == -1)
@@ -80,10 +93,32 @@ int		readflag(t_flags *flags, const char *str)
 					flags->width = (flags->width * 10) + (str[i] - '0');
 				i++;
 			}
+		}
 		else
 			i++;	
 	}
 	flags->conversion = str[i];
+	//printf("imprimindi str i === %c ===   ", str[i]);
 	flags->len = i;
 	return (i);
+}
+
+void    readingflag(t_flags *flags, const char str)
+{
+    if(str == '-')
+    {
+        flags->minus = 1;
+        flags->zero = 0;
+    }
+    if((str == '0') && flags->minus != 1 && flags->width == 0)
+        flags->zero = 1;
+    if(str == '.')
+        flags->prec = (flags->prec == -1) ? 0 : -2;
+    if (str == '*')
+    {
+        if (flags->prec ==-1)
+            flags->star = 1;
+        else
+            flags->star = (flags->star == 0) ? 2 : 3;
+    }
 }

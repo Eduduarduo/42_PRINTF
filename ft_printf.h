@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/11/09 12:32:26 by root             ###   ########.fr       */
+/*   Updated: 2020/12/02 18:00:42 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,14 @@ int ft_putchar_ret(char c);
 void init_flags(t_flags *flags);
 
 int	ft_isdigit(int c);
+
+void    readingflag(t_flags *flags, const char str);
+
+int     readflag(t_flags *flags, const char *str);
+
+int     ft_isconversion(t_flags *flags, va_list args);
+
+int     ft_printf_c(t_flags *flags, va_list args);
 
 
 #endif
