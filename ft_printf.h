@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/02 18:00:42 by root             ###   ########.fr       */
+/*   Updated: 2020/12/03 11:03:18 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,12 @@ int     ft_isconversion(t_flags *flags, va_list args);
 
 int     ft_printf_c(t_flags *flags, va_list args);
 
+void	ft_printf_star(t_flags *flags, va_list args);
+
+int		ft_printf_s(t_flags *flags, va_list args);
+
+int		ft_printf_x(t_flags *flags, va_list args);
+
+int		ft_printf_d(t_flags *flags, va_list args);
 
 #endif
