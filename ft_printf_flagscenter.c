@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/03 11:03:32 by root             ###   ########.fr       */
+/*   Updated: 2020/12/15 23:37:55 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,14 @@ void	ft_printf_star(t_flags *flags, va_list args)
 	if (flags->prec < 0)
 		flags->prec = -1;
 
+}
+
+int		ft_putflags(int condition, char c)
+{
+	int count;
+
+	count = 0;
+	while (condition-- > 0)
+		count += ft_putchar_ret(c);
+	return (count);
 }
