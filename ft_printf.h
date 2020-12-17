@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/15 23:36:23 by root             ###   ########.fr       */
+/*   Updated: 2020/12/17 00:37:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int     readflag(t_flags *flags, const char *str);
 
 int     ft_isconversion(t_flags *flags, va_list args);
 
+int		ft_putflags(int condition, char c);
+
 int     ft_printf_c(t_flags *flags, va_list args);
 
 void	ft_printf_star(t_flags *flags, va_list args);
@@ -59,13 +61,8 @@ int		ft_printf_x(t_flags *flags, va_list args);
 
 int		ft_printf_d(t_flags *flags, va_list args);
 
-static int	ft_putnbr_unsigned(unsigned int n);
 
-static int	ft_printf_ub(t_flags *flags, int len, int number);
-
-static int	ft_printf_ua(t_flags *flags, int len, int number);
-
-int		ft_putflags(int condition, char c);
+char		*ft_itoa_base(unsigned long int n, char type);
 
 
 #endif

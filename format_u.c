@@ -6,36 +6,11 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/15 23:48:45 by root             ###   ########.fr       */
+/*   Updated: 2020/12/17 00:37:47 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	ft_printf_u(t_flags *flags, va_list args)
-{
-	int 		count;
-	int			len;
-	unsigned int	number;
-
-	ft_printf_star(flags, args);
-	number = va_arg(args, unsigned int);
-	count = 0;
-	len = ft_numlen(number);
-	if (flags->prec == 0 && number == 0)
-		count += ft_putflags(flags->width,' ');
-	else if (flags->len == 0 || (len >= flags->width && len >= flags->prec))
-		count += ft_putnbr_unsigned(number);
-	else if (flags->prec > len && flags->prec >= flags->width)
-		count += ft_putflags(flags->prec - len, '0')
-					+ ft_putnbr_unsigned(number);
-	else if (flags->width >= len && len > flags->prec)
-		count += ft_printf_ua(flags, len, number);
-	else if (flags->width > flags->prec && flags->prec >= len)
-		count += ft_printf_ub(flags, len, number);
-	return (count);	
-
-}
 
 static int	ft_putnbr_unsigned(unsigned int n)
 {
@@ -79,4 +54,29 @@ static int	ft_printf_ub(t_flags *flags, int len, int number)
 	if (flags->minus == 1)
 		count += ft_putflags(flags->width - flags->prec, ' ');
 	return (count);
+}
+
+int	ft_printf_u(t_flags *flags, va_list args)
+{
+	int 		count;
+	int			len;
+	unsigned int	number;
+
+	ft_printf_star(flags, args);
+	number = va_arg(args, unsigned int);
+	count = 0;
+	len = ft_numlen(number);
+	if (flags->prec == 0 && number == 0)
+		count += ft_putflags(flags->width,' ');
+	else if (flags->len == 0 || (len >= flags->width && len >= flags->prec))
+		count += ft_putnbr_unsigned(number);
+	else if (flags->prec > len && flags->prec >= flags->width)
+		count += ft_putflags(flags->prec - len, '0')
+					+ ft_putnbr_unsigned(number);
+	else if (flags->width >= len && len > flags->prec)
+		count += ft_printf_ua(flags, len, number);
+	else if (flags->width > flags->prec && flags->prec >= len)
+		count += ft_printf_ub(flags, len, number);
+	return (count);	
+
 }
