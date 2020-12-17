@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 00:37:01 by root             ###   ########.fr       */
+/*   Updated: 2020/12/17 13:27:03 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,11 @@ int		ft_printf_x(t_flags *flags, va_list args);
 
 int		ft_printf_d(t_flags *flags, va_list args);
 
+int		ft_printf_p(t_flags *flags, va_list args);
+
+int		ft_printf_u(t_flags *flags, va_list args);
+
+int		ft_printf_percent(t_flags *flags, va_list args);
 
 char		*ft_itoa_base(unsigned long int n, char type);
 
