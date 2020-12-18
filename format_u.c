@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 00:37:47 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 17:57:05 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_putnbr_unsigned(unsigned int n)
 {
-	int	count;
+	int		count;
 
 	count = 1;
 	if (n >= 10)
@@ -25,7 +25,7 @@ static int	ft_putnbr_unsigned(unsigned int n)
 
 static int	ft_printf_ua(t_flags *flags, int len, int number)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (flags->minus == 0)
@@ -44,7 +44,7 @@ static int	ft_printf_ua(t_flags *flags, int len, int number)
 
 static int	ft_printf_ub(t_flags *flags, int len, int number)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (flags->minus == 0)
@@ -56,7 +56,7 @@ static int	ft_printf_ub(t_flags *flags, int len, int number)
 	return (count);
 }
 
-int	ft_printf_u(t_flags *flags, va_list args)
+int				ft_printf_u(t_flags *flags, va_list args)
 {
 	int 		count;
 	int			len;
@@ -78,5 +78,4 @@ int	ft_printf_u(t_flags *flags, va_list args)
 	else if (flags->width > flags->prec && flags->prec >= len)
 		count += ft_printf_ub(flags, len, number);
 	return (count);	
-
 }

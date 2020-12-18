@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 00:32:24 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 17:57:59 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	ft_printf_xa(t_flags *flags, int len, char *number)
 
 static int	ft_printf_xb(t_flags *flags, int len, char *number)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (flags->minus == 0)

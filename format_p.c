@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 13:28:11 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 17:35:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_printf_pa(t_flags *flags)
 {
-	int	count;
+	int		count;
 
 	count = 0;
 	while (flags->width-- - 2 > 0)
@@ -25,7 +25,7 @@ static int	ft_printf_pa(t_flags *flags)
 
 static int	ft_printf_pb(t_flags *flags, int len, char *end_hex)
 {
-	int	count;
+	int		count;
 
 	count = ft_printf("0x");
 	while (flags->prec-- - len)
@@ -36,7 +36,7 @@ static int	ft_printf_pb(t_flags *flags, int len, char *end_hex)
 
 static int	ft_printf_pc(t_flags *flags, int len, char *end_hex)
 {
-	int	count;
+	int		count;
 
 	count = 0;
 	len = len + 2;
@@ -58,8 +58,8 @@ static int	ft_printf_pc(t_flags *flags, int len, char *end_hex)
 
 static int	ft_printf_pd(t_flags *flags, int len, char *end_hex)
 {
-	int	count;
-	int	point;
+	int		count;
+	int		point;
 
 	count = 0;
 	point = flags->prec;

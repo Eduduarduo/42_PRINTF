@@ -6,15 +6,15 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 13:27:42 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 17:53:42 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_percent(t_flags *flags, va_list args)
+int		ft_printf_percent(t_flags *flags, va_list args)
 {
-	int		count;
+	int	count;
 
 	ft_printf_star(flags, args);
 	count = 0;

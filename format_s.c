@@ -6,16 +6,15 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/16 18:10:33 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 17:55:47 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
 static int	ft_printf_sa(t_flags *flags, int len, char *str)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	while ((flags->width-- - len) && !(flags->minus))
@@ -29,7 +28,7 @@ static int	ft_printf_sa(t_flags *flags, int len, char *str)
 
 static int	ft_printf_sb(t_flags *flags, int prec, char *str)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	while ((flags->width-- - prec) && !(flags->minus))
@@ -43,7 +42,7 @@ static int	ft_printf_sb(t_flags *flags, int prec, char *str)
 
 static int	ft_printf_sc(t_flags *flags, int len, int prec, char *str)
 {
-	int count;
+	int		count;
 
 	count = 0;
 	if (flags->prec == 0 && flags->width == 0)
@@ -67,7 +66,7 @@ static int	ft_printf_sc(t_flags *flags, int len, int prec, char *str)
 	return (count);
 }
 
-int	ft_printf_s(t_flags *flags, va_list args)
+int			ft_printf_s(t_flags *flags, va_list args)
 {	
 	int		count;
 	int		len;
@@ -92,4 +91,3 @@ int	ft_printf_s(t_flags *flags, va_list args)
 		count += ft_printf_sc(flags, len, precision, str);
 	return (count);
 }
-

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/03 16:59:15 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 18:05:46 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_putchar_ret(char c)
 	return (1);
 }
 
-int		ft_putnbr_ret(int n)
+int				ft_putnbr_ret(int n)
 {
 	unsigned	i;
 	int			count;
@@ -46,7 +46,7 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int ft_strlen(char	*str)
+int		ft_strlen(char	*str)
 {
 	int i;
 

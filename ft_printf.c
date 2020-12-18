@@ -6,56 +6,39 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/17 00:34:26 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 18:10:05 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *str, ...)
+int			ft_printf(const char *str, ...)
 {
-	int count;
+	int		count;
 	va_list	args;
-	//int		i;
-	//char	c;
-	t_flags flags;
+	t_flags	flags;
 
 	count = 0;
-	//i = 0;
-
 	va_start(args, str);
 	while (*str)
 	{
 		if (*str == '%')
 		{
-			//i++;
 			init_flags(&flags);
-			//printf("O que esta dentro flag->convertion .... %c .... \n", flags.conversion );
 			str++;
-			//printf("STR .... %s .... \n", str);
 			readflag(&flags, str);
-			//printf("222222222222 flag->convertion .... %c .... 22222\n", flags.conversion );
-			/*if ( str[i] == 'c')
-			{
-				c = va_arg(args, int);
-				count += ft_putchar_ret(c);
-			}*/
-
             count += ft_isconversion(&flags, args);
             str += flags.len;
-
-
 		}
 		else
 			count += ft_putchar_ret(*str);
 		str++;
 	}
-
 	va_end(args);
 	return (count);
 }
 
-void init_flags(t_flags *flags)
+void	init_flags(t_flags *flags)
 {
 	flags->len = 0;
 	flags->width = 0;
@@ -64,7 +47,6 @@ void init_flags(t_flags *flags)
 	flags->minus = 0;
 	flags->zero = 0;
 	flags->conversion =  '\0';
-	//Outra maneira de inicializar a struct(t_flags) flags {0};
 }
 
 int		readflag(t_flags *flags, const char *str)
@@ -75,10 +57,8 @@ int		readflag(t_flags *flags, const char *str)
 	while (str[i] == '-' || str[i] == '*' || str[i] == '.' || ft_isdigit(str[i]))
 	{
 		readingflag(flags, str[i]);
-		//
-		//printf("ENTROU 1   ");
 		if (ft_isdigit(str[i]))
-		{	//printf("ENTROU  2  ");
+		{	
 			while (ft_isdigit(str[i]))
 			{
 				if(flags->prec == -1)
@@ -92,7 +72,6 @@ int		readflag(t_flags *flags, const char *str)
 			i++;	
 	}
 	flags->conversion = str[i];
-	//printf("imprimindi str i === %c ===   ", str[i]);
 	flags->len = i;
 	return (i);
 }

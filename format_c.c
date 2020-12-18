@@ -6,20 +6,20 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/03 11:04:13 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 16:31:52 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_printf_c(t_flags *flags, va_list args)
+int			ft_printf_c(t_flags *flags, va_list args)
 {
-    int     count;
-    char    c;
+	int		count;
+	char	c;
 
-    count = 0;
-    ft_printf_star(flags, args);
-    c = va_arg(args, int);
+	count = 0;
+	ft_printf_star(flags, args);
+	c = va_arg(args, int);
 	if (flags->minus == 1)
 	{
 		count += ft_putchar_ret(c);
