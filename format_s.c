@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 17:55:47 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 19:12:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	ft_printf_sc(t_flags *flags, int len, int prec, char *str)
 }
 
 int			ft_printf_s(t_flags *flags, va_list args)
-{	
+{
 	int		count;
 	int		len;
 	int		precision;
@@ -76,11 +76,11 @@ int			ft_printf_s(t_flags *flags, va_list args)
 	count = 0;
 	ft_printf_star(flags, args);
 	str = va_arg(args, char *);
-	if(str == NULL)
+	if (str == NULL)
 		str = "(null)";
 	len = ft_strlen(str);
 	precision = flags->prec > len ? len : flags->prec;
-	if(flags->len ==0 || (flags->prec == -1 && len >= flags->width))
+	if (flags->len == 0 || (flags->prec == -1 && len >= flags->width))
 		while (*str)
 			count += ft_putchar_ret(*str++);
 	else if (flags->prec == -1 && flags->width > len)

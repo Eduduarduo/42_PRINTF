@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 16:31:52 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 18:58:08 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int			ft_printf_c(t_flags *flags, va_list args)
 			count += ft_putchar_ret(' ');
 		count += ft_putchar_ret(c);
 	}
-    return (count);
+	return (count);
 }
