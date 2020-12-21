@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 19:25:46 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 15:13:04 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_isdigit(int c);
 
 void	init_flags(t_flags *flags);
 
-void	readingflag(t_flags *flags, const char str);
+void	readingflag(const char f, t_flags *flags);
 
 int		readflag(t_flags *flags, const char *str);
 

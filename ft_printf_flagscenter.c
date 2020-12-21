@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 18:04:58 by root             ###   ########.fr       */
+/*   Updated: 2020/12/18 19:31:25 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 int		ft_isconversion(t_flags *flags, va_list args)
 {
 	int count;
-//printf("entro no is Convertion");
-	count = 0;
 
+	count = 0;
 	if (flags->conversion == 'd' || flags->conversion == 'i')
 		count += ft_printf_d(flags, args);
 	else if (flags->conversion == 'x' || flags->conversion == 'X')
@@ -56,7 +55,6 @@ void	ft_printf_star(t_flags *flags, va_list args)
 	}
 	if (flags->prec < 0)
 		flags->prec = -1;
-
 }
 
 int		ft_putflags(int condition, char c)

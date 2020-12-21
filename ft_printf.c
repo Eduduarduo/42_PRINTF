@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 19:23:04 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 15:43:19 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,49 +49,49 @@ void	init_flags(t_flags *flags)
 	flags->conversion = '\0';
 }
 
-int		readflag(t_flags *flags, const char *str)
+void	readingflag(const char f, t_flags *flags)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] == '-' || str[i] == '*' || str[i] == '.' || ft_isdigit(str[i]))
-	{
-		readingflag(flags, str[i]);
-		if (ft_isdigit(str[i]))
-		{
-			while (ft_isdigit(str[i]))
-			{
-				if (flags->prec == -1)
-					flags->width = (flags->width * 10) + (str[i] - '0');
-				if (flags->prec == 0)
-					flags->width = (flags->width * 10) + (str[i] - '0');
-				i++;
-			}
-		}
-		else
-			i++;
-	}
-	flags->conversion = str[i];
-	flags->len = i;
-	return (i);
-}
-
-void	readingflag(t_flags *flags, const char str)
-{
-	if(str == '-')
+	if (f == '-')
 	{
 		flags->minus = 1;
 		flags->zero = 0;
 	}
-	if ((str == '0') && flags->minus != 1 && flags->width == 0)
+	if (f == '0' && flags->minus != 1 && flags->width == 0)
 		flags->zero = 1;
-	if (str == '.')
+	if (f == '.')
+	{
 		flags->prec = (flags->prec == -1) ? 0 : -2;
-	if (str == '*')
+	}
+	if (f == '*')
 	{
 		if (flags->prec == -1)
 			flags->star = 1;
 		else
 			flags->star = (flags->star == 0) ? 2 : 3;
 	}
+}
+
+int		readflag(t_flags *flags, const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] == '-' || str[i] == '*' || str[i] == '.' || ft_isdigit(str[i]))
+	{
+		readingflag(str[i], flags);
+		if (ft_isdigit(str[i]))
+			while (ft_isdigit(str[i]))
+			{
+				if (flags->prec == -1)
+					flags->width = (flags->width * 10) + (str[i] - '0');
+				if (flags->prec >= 0)
+					flags->prec = (flags->prec * 10) + (str[i] - '0');
+				i++;
+			}
+		else
+			i++;
+	}
+	flags->conversion = str[i];
+	flags->len = i;
+	return (i);
 }

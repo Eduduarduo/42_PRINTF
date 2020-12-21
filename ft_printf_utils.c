@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 18:05:46 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 14:13:12 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ int				ft_putnbr_ret(int n)
 
 int	ft_isdigit(int c)
 {
-	if ((c >= 48) && (c <= 57))
+	if (c >= 48 && c <= 57)
 		return (1);
-	else
-		return (0);
+return (0);
 }
 
 int		ft_strlen(char	*str)

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 18:19:55 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 14:50:41 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_printf_da(t_flags *flags, int len, int number)
 {
-	int		count;
+	int count;
 
 	count = 0;
 	if (number < 0)
@@ -29,7 +29,7 @@ static int	ft_printf_da(t_flags *flags, int len, int number)
 
 static int	ft_printf_db(t_flags *flags, int len, int number)
 {
-	int		count;
+	int count;
 
 	count = 0;
 	if (number < 0 && flags->prec == -1)
@@ -57,7 +57,7 @@ static int	ft_printf_db(t_flags *flags, int len, int number)
 
 static int	ft_printf_dc(t_flags *flags, int len, int number)
 {
-	int		count;
+	int count;
 
 	count = 0;
 	if (number < 0)
@@ -75,9 +75,9 @@ static int	ft_printf_dc(t_flags *flags, int len, int number)
 	return (count);
 }
 
-int		ft_printf_d(t_flags *flags, va_list args)
+int			ft_printf_d(t_flags *flags, va_list args)
 {
-	int	len;
+	int len;
 	int	number;
 	int count;
 
