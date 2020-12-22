@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 23:09:40 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:42:55 by edbarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,44 +28,44 @@ typedef struct	s_flags {
 	char			conversion;
 }				t_flags;
 
-int		ft_printf(const char *str, ...);
+int				ft_printf(const char *str, ...);
 
-int		ft_putchar_ret(char c);
+int				ft_putchar_ret(char c);
 
-int		ft_putnbr_ret(int n);
+int				ft_putnbr_ret(int n);
 
-int		ft_strlen(char	*str);
+int				ft_strlen(char	*str);
 
-int		ft_numlen(int num);
+int				ft_numlen(int num);
 
-int		ft_isdigit(int c);
+int				ft_isdigit(int c);
 
-void	init_flags(t_flags *flags);
+void			init_flags(t_flags *flags);
 
-void	readingflag(const char f, t_flags *flags);
+void			readingflag(const char f, t_flags *flags);
 
-int		readflag(t_flags *flags, const char *str);
+int				readflag(t_flags *flags, const char *str);
 
-int		ft_isconversion(t_flags *flags, va_list args);
+int				ft_isconversion(t_flags *flags, va_list args);
 
-int		ft_putflags(int condition, char c);
+int				ft_putflags(int condition, char c);
 
-int		ft_printf_c(t_flags *flags, va_list args);
+int				ft_printf_c(t_flags *flags, va_list args);
 
-void	ft_printf_star(t_flags *flags, va_list args);
+void			ft_printf_star(t_flags *flags, va_list args);
 
-int		ft_printf_s(t_flags *flags, va_list args);
+int				ft_printf_s(t_flags *flags, va_list args);
 
-int		ft_printf_x(t_flags *flags, va_list args);
+int				ft_printf_x(t_flags *flags, va_list args);
 
-int		ft_printf_d(t_flags *flags, va_list args);
+int				ft_printf_d(t_flags *flags, va_list args);
 
-int		ft_printf_p(t_flags *flags, va_list args);
+int				ft_printf_p(t_flags *flags, va_list args);
 
-int		ft_printf_u(t_flags *flags, va_list args);
+int				ft_printf_u(t_flags *flags, va_list args);
 
-int		ft_printf_percent(t_flags *flags, va_list args);
+int				ft_printf_percent(t_flags *flags, va_list args);
 
-char	*ft_itoa_base(unsigned long int n, char type);
+char			*ft_itoa_base(unsigned long int n, char type);
 
 #endif

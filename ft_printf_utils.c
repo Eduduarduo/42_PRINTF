@@ -6,19 +6,19 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 23:06:20 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:35:27 by edbarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchar_ret(char	c)
+int		ft_putchar_ret(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int				ft_putnbr_ret(int	n)
+int		ft_putnbr_ret(int n)
 {
 	unsigned	i;
 	int			count;
@@ -45,7 +45,7 @@ int		ft_isdigit(int c)
 	return (0);
 }
 
-int		ft_strlen(char	*str)
+int		ft_strlen(char *str)
 {
 	int i;
 
@@ -55,7 +55,7 @@ int		ft_strlen(char	*str)
 	return (i);
 }
 
-int		ft_numlen(int	num)
+int		ft_numlen(int num)
 {
 	int i;
 

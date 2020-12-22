@@ -6,13 +6,13 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 23:06:39 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:36:27 by edbarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_printf(const char *str, ...)
+int		ft_printf(const char *str, ...)
 {
 	int		count;
 	va_list	args;

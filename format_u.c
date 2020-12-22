@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 22:56:23 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:37:07 by edbarbos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ static int	ft_printf_ub(t_flags *flags, int len, int number)
 	return (count);
 }
 
-int				ft_printf_u(t_flags *flags, va_list args)
+int			ft_printf_u(t_flags *flags, va_list args)
 {
-	int			count;
-	int			len;
+	int				count;
+	int				len;
 	unsigned int	number;
 
 	ft_printf_star(flags, args);
