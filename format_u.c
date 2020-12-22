@@ -6,11 +6,24 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/18 19:14:42 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 22:12:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_numlen_unsigned(unsigned int num)
+{
+	int i;
+
+	i = 1;
+	while (num >= 10)
+	{
+		num /= 10;
+		i++;
+	}
+	return (i);
+}
 
 static int	ft_putnbr_unsigned(unsigned int n)
 {
@@ -65,7 +78,7 @@ int			ft_printf_u(t_flags *flags, va_list args)
 	ft_printf_star(flags, args);
 	number = va_arg(args, unsigned int);
 	count = 0;
-	len = ft_numlen(number);
+	len = ft_numlen_unsigned(number);
 	if (flags->prec == 0 && number == 0)
 		count += ft_putflags(flags->width, ' ');
 	else if (flags->len == 0 || (len >= flags->width && len >= flags->prec))
