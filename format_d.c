@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 22:59:29 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:04:52 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int			ft_printf_d(t_flags *flags, va_list args)
 		if (flags->minus == 0)
 			count += ft_printf_db(flags, len, number);
 		else
-			count += ft_putnbr_ret(number) + 
+			count += ft_putnbr_ret(number) +
 				ft_putflags(flags->width - len, ' ');
 	}
 	else if (flags->width > flags->prec && flags->prec >= len)

@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/30 20:16:52 by edbarbos          #+#    #+#             */
-/*   Updated: 2020/12/21 22:59:17 by root             ###   ########.fr       */
+/*   Updated: 2020/12/21 23:06:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		readflag(t_flags *flags, const char *str)
 	int i;
 
 	i = 0;
-	while (str[i] == '-' || str[i] == '*' || str[i] == '.' || 
+	while (str[i] == '-' || str[i] == '*' || str[i] == '.' ||
 		ft_isdigit(str[i]))
 	{
 		readingflag(str[i], flags);
